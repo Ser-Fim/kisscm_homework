@@ -69,7 +69,7 @@ class TOMLTransformer(lark.Transformer):
     def var_decl(self, items):
         name, val = items
         self.constants[name] = val
-        return None  # не включать в вывод
+        return None
 
     def top_value(self, items):
         name, val = items
@@ -79,7 +79,7 @@ class TOMLTransformer(lark.Transformer):
         result = {}
         for item in items:
             if item is not None:
-                # item должен быть dict!
+
                 result.update(item)
         return result
 
